@@ -1,0 +1,17 @@
+version: "3"
+services:
+  cykl_crawlab_api:
+    build: .
+    command: python src/main_api.py
+    restart: on-failure:5
+    ports:
+    - "60002:5555"
+    environment:
+      MYSQL_HOST: '172.17.0.6'
+      MYSQL_USERNAME: 'root'
+      MYSQL_PASSWORD: 'cykl+123'
+      MYSQL_DB: 'crawlab_db'
+    env_file:
+      - .env
+    volumes:
+      - .:/code
