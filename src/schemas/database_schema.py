@@ -22,6 +22,7 @@ class WxJuBenShaRoom(Base):
     room_id = Column(String(255))
     room_qrcode = Column(Text)
     drama_name = Column(String(255))
+    drama_duration = Column(String(50))
     drama_male = Column(Integer)
     drama_female = Column(Integer)
     team_creater = Column(String(255))
