@@ -22,10 +22,12 @@ def input_room(session: Session, insert_room: RoomModel):
         drama_name=insert_room.drama_name,
         drama_male=insert_room.drama_male,
         drama_female=insert_room.drama_female,
+        drama_duration=insert_room.drama_duration,
         team_creater=insert_room.team_creater,
         team_male=insert_room.team_male,
         team_female=insert_room.team_female,
-        team_start_time=insert_room.team_start_time
+        team_start_time=insert_room.team_start_time,
+        created_time=datetime.datetime.now()
     )
     session.add(new_room)
     session.commit()
