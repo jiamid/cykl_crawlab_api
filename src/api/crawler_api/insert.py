@@ -24,9 +24,6 @@ async def insert_video(insert_data: RoomModel, session: Session = Depends(get_db
 
     try:
         status = input_room(session, one_room)
-    except ValueError as e:
-        result.code = e.args[0]
-        result.msg = e.args[1]
     except Exception as e:
         result.code = 2004
         result.msg = str(e)
