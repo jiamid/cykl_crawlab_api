@@ -21,11 +21,11 @@ class RoomModel(BaseModel):
     team_creater: str = Field(default='', description='发车人')
     team_male: int = Field(default=0, description='目前报名男性人数')
     team_female: int = Field(default=0, description='目前报名女性人数')
-    team_start_time: datetime = Field(default='', description='发车时间')
+    team_start_time: Optional[datetime] = Field(default='', description='发车时间')
 
-    room_id: str = Field(default='', description='房间id')
+    room_id: Optional[str] = Field(default='', description='房间id')
 
-    room_qrcode: str = Field(default='', description='房间二维码')
+    room_qrcode: Optional[str] = Field(default='', description='房间二维码')
     app_name: str = Field(default='', description='爬取应用名')
 
 
