@@ -10,8 +10,16 @@ import datetime
 
 from sqlalchemy.orm import Session
 from sqlalchemy import and_, or_, inspect
-from schemas.database_schema import WxJuBenShaRoom
-from schemas.api_schema import RoomModel
+from schemas.database_schema import WxJuBenShaRoom, HelloabaRankTable
+from schemas.api_schema import RoomModel, HelloabaRankModel
+
+
+def input_helloaba_rank(session: Session, insert_rank: HelloabaRankModel):
+    new_rank = HelloabaRankTable(**insert_rank.dict())
+    session.add(new_rank)
+    session.commit()
+    session.refresh(new_rank)
+    return 1
 
 
 def input_room(session: Session, insert_room: RoomModel):

@@ -8,7 +8,7 @@
 """
 import datetime
 
-from sqlalchemy import Boolean, Column, Integer, String, DateTime, Text
+from sqlalchemy import Boolean, Column, Integer, String, DateTime, Text, FLOAT
 from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
@@ -29,3 +29,22 @@ class WxJuBenShaRoom(Base):
     team_male = Column(Integer)
     team_female = Column(Integer)
     team_start_time = Column(DateTime)
+
+
+class HelloabaRankTable(Base):
+    __tablename__ = 'helloaba_rank_data'
+    id = Column(Integer, primary_key=True)
+    playedStatus = Column(Integer)
+    recommendNum = Column(Integer)
+    recommendUrl = Column(String)
+    scriptCategory = Column(Integer)
+    scriptCoverUrl = Column(String)
+    scriptFemalePlayerLimit = Column(Integer)
+    scriptId = Column(String)
+    scriptIntro = Column(String)
+    scriptMalePlayerLimit = Column(Integer)
+    scriptName = Column(String)
+    scriptPlayerLimit = Column(Integer)
+    scriptScore: Column(FLOAT)
+    scriptTag = Column(String)
+    rankType = Column(String)
