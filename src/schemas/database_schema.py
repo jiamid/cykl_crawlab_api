@@ -45,6 +45,6 @@ class HelloabaRankTable(Base):
     scriptMalePlayerLimit = Column(Integer)
     scriptName = Column(String)
     scriptPlayerLimit = Column(Integer)
-    scriptScore: Column(FLOAT)
+    scriptScore = Column(FLOAT)
     scriptTag = Column(String)
     rankType = Column(String)
