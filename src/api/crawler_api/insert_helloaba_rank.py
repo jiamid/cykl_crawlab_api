@@ -3,7 +3,7 @@
 """
 @Author   ：jiamid
 @Time     ：2022/5/25 21:43
-@File     ：helloaba_rank_insert.py
+@File     ：insert_helloaba_rank.py
 @Software ：PyCharm
 """
 import datetime

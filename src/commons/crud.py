@@ -10,8 +10,16 @@ import datetime
 
 from sqlalchemy.orm import Session
 from sqlalchemy import and_, or_, inspect
-from schemas.database_schema import WxJuBenShaRoom, HelloabaRankTable
-from schemas.api_schema import RoomModel, HelloabaRankModel
+from schemas.database_schema import WxJuBenShaRoom, HelloabaRankTable, MiQuanScriptTable
+from schemas.api_schema import RoomModel, HelloabaRankModel, MiQuanScriptModel
+
+
+def input_mi_quan_script(session: Session, insert_script: MiQuanScriptModel):
+    new = MiQuanScriptTable(**insert_script.dict())
+    session.add(new)
+    session.commit()
+    session.refresh(new)
+    return 1
 
 
 def input_helloaba_rank(session: Session, insert_rank: HelloabaRankModel):

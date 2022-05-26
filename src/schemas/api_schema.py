@@ -45,6 +45,17 @@ class HelloabaRankModel(BaseModel):
     scriptWantPlayerCount: Optional[int]
 
 
+class MiQuanScriptModel(BaseModel):
+    scriptId: str = Field(default='')
+    scriptName: str = Field(default='')
+    scriptScore: float = Field(default=0)
+    difficultyLevel: str = Field(default='')
+    playType: str = Field(default='')
+    plotType: str = Field(default='')
+    themeType: str = Field(default='')
+    updatedAt: datetime = Field(default=datetime.now())
+
+
 class ResponseMobel(BaseModel):
     code: int = Field(default=200)
     msg: str = Field(default='success')

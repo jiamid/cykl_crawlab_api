@@ -8,7 +8,7 @@
 """
 import datetime
 
-from sqlalchemy import Boolean, Column, Integer, String, DateTime, Text, FLOAT
+from sqlalchemy import Boolean, Column, Integer, String, DateTime, Text, FLOAT, VARCHAR
 from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
@@ -50,3 +50,15 @@ class HelloabaRankTable(Base):
     rankType = Column(String)
     rankNum = Column(Integer)
     scriptWantPlayerCount = Column(Integer)
+
+
+class MiQuanScriptTable(Base):
+    __tablename__ = 'mi_quan_script'
+    scriptId = Column(VARCHAR, primary_key=True)
+    scriptName = Column(VARCHAR)
+    scriptScore = Column(FLOAT)
+    difficultyLevel = Column(VARCHAR)
+    playType = Column(VARCHAR)
+    plotType = Column(VARCHAR)
+    themeType = Column(VARCHAR)
+    updatedAt = Column(DateTime, default=datetime.datetime.now())

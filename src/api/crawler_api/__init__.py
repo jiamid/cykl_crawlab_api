@@ -8,10 +8,12 @@
 """
 from fastapi import APIRouter
 from api.crawler_api import insert
-from api.crawler_api import helloaba_rank_insert
+from api.crawler_api import insert_helloaba_rank
+from api.crawler_api import insert_mi_quan_script
 
 PREFIX = '/crawler'
 insert_router = APIRouter()  # prefix='/crawler' windows下不能在这里加
 
 insert_router.include_router(insert.router, prefix=PREFIX)
-insert_router.include_router(helloaba_rank_insert.router, prefix=PREFIX)
+insert_router.include_router(insert_helloaba_rank.router, prefix=PREFIX)
+insert_router.include_router(insert_mi_quan_script.router, prefix=PREFIX)
