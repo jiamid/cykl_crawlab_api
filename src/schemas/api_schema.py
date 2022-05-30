@@ -56,6 +56,13 @@ class MiQuanScriptModel(BaseModel):
     updatedAt: datetime = Field(default=datetime.now())
 
 
+class OnlineScriptModel(BaseModel):
+    scriptId: str = Field(default='')
+    scriptName: str = Field(default='')
+    appName: str = Field(default='')
+    updatedAt: datetime = Field(default=datetime.now())
+
+
 class ResponseMobel(BaseModel):
     code: int = Field(default=200)
     msg: str = Field(default='success')

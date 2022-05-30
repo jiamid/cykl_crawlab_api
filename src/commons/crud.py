@@ -11,8 +11,18 @@ import datetime
 from sqlalchemy.orm import Session
 from sqlalchemy import and_, or_, inspect
 from sqlalchemy.dialects.mysql import insert
-from schemas.database_schema import WxJuBenShaRoom, HelloabaRankTable, MiQuanScriptTable
-from schemas.api_schema import RoomModel, HelloabaRankModel, MiQuanScriptModel
+from schemas.database_schema import WxJuBenShaRoom, HelloabaRankTable, MiQuanScriptTable, OnlineScriptTable
+from schemas.api_schema import RoomModel, HelloabaRankModel, MiQuanScriptModel, OnlineScriptModel
+
+
+def input_online_script(session: Session, insert_script: OnlineScriptModel):
+    now = datetime.datetime.now()
+    insert_script.updatedAt = now
+    rs_dict = insert_script.dict()
+    statment = insert(OnlineScriptTable).values(**rs_dict).on_duplicate_key_update(**rs_dict)
+    session.execute(statment)
+    session.commit()
+    return 1
 
 
 def input_mi_quan_script(session: Session, insert_script: MiQuanScriptModel):

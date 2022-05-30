@@ -62,3 +62,11 @@ class MiQuanScriptTable(Base):
     plotType = Column(VARCHAR)
     themeType = Column(VARCHAR)
     updatedAt = Column(DateTime, default=datetime.datetime.now())
+
+
+class OnlineScriptTable(Base):
+    __tablename__ = 'online_drama'
+    scriptId = Column(VARCHAR, primary_key=True)
+    scriptName = Column(VARCHAR)
+    appName = Column(VARCHAR)
+    updatedAt = Column(DateTime, default=datetime.datetime.now())
