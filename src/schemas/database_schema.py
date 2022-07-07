@@ -50,6 +50,8 @@ class HelloabaRankTable(Base):
     rankType = Column(String)
     rankNum = Column(Integer)
     scriptWantPlayerCount = Column(Integer)
+    scriptRankScoreValue = Column(Integer)
+    scriptRankScoreValueType = Column(Integer)
 
 
 class MiQuanScriptTable(Base):
