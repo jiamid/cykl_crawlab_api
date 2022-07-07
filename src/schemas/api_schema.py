@@ -43,6 +43,8 @@ class HelloabaRankModel(BaseModel):
     rankType: Optional[str] = Field(description='排行榜类型', default='')
     rankNum: Optional[int]
     scriptWantPlayerCount: Optional[int]
+    scriptRankScoreValue: Optional[int]
+    scriptRankScoreValueType: Optional[int]
 
 
 class MiQuanScriptModel(BaseModel):
